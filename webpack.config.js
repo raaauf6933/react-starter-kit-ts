@@ -1,6 +1,5 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 
 const resolve = path.resolve.bind(path, __dirname);
@@ -10,8 +9,9 @@ module.exports = {
   entry: './index.tsx',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: '[name].[contenthash].js',
+    filename: '[name].[hash].js',
     publicPath: '',
+    clean: true,
   },
   module: {
     rules: [
@@ -66,6 +66,7 @@ module.exports = {
     port: 3000,
     compress: true,
   },
+  devtool: 'source-map',
   plugins: [
     new HtmlWebpackPlugin({
       template: 'public/index.html',
