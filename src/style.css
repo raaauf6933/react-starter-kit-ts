@@ -1,3 +1,7 @@
 body {
-  background-color: rgb(189, 173, 194);
+  height: 100vh;
+}
+
+#root {
+  height: 100vh;
 }

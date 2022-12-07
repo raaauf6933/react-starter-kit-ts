@@ -9,7 +9,7 @@ module.exports = {
   entry: './index.tsx',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: '[name].[hash].js',
+    filename: '[name].[contenthash].js',
     publicPath: '',
     clean: true,
   },
@@ -34,6 +34,7 @@ module.exports = {
           'css-loader',
           // Compiles Sass to CSS
           'sass-loader',
+          'postcss-loader',
         ],
       },
       {
